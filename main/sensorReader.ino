@@ -65,8 +65,8 @@ void sprint ()
   D = erro - erro_antes;
   PID = (Kp * P) + (Kd * D) + (Ki * I);
   
-  speedL += PID;
-  speedR -= PID;
+  speedL = 247 + PID;
+  speedR = 247 - PID;
 
   if(speedR < 0)
     speedR = 0;  

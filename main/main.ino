@@ -8,7 +8,7 @@ boolean s1, s2, s3, s4, s5, s6, s7, s8, s9;
 int motorR = 2, motorL = 7;
 
 //Constantes PID
-float Kp = 30, Ki = 0.3, Kd = 20;
+float Kp = 25, Ki = 0, Kd = 0;
 
 //Variaveis para calcular o PID
 float P = 0, I = 0, D = 0, PID = 0;
@@ -36,7 +36,7 @@ void setup() {
     digitalWrite(IN4, LOW);
     analogWrite(motorR, speedR);
     analogWrite(motorL, speedL);   
-    delay(1000); 
+    delay(150); 
     speedR = 220;
     speedL = 220;
 }
