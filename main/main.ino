@@ -8,7 +8,7 @@ bool s1, s2, s3, s4, s5, s6, s7, s8, s9;
 int motorR = 2, motorL = 7;
 
 //Constantes PID
-float Kp = 18, Ki = 0, Kd = 0;
+float Kp = 15, Ki = 0.1, Kd = 2;
 //float Kp = 15, Ki = 0.1, Kd = 2;
 
 //Variaveis para calcular o PID
@@ -19,7 +19,7 @@ int erro = 0, erro_antes = 0;
 bool faixa = false;
 
 //Velocidades iniciais dos motores
-int speedR = 120, speedL = 120;
+int speedR = 100, speedL = 100;
 
 void setup() {
     //MOTORES
@@ -59,12 +59,12 @@ void sprint ()
 
   if(speedR < 20)
     speedR = 20;  
-  else if(speedR > 150)
-    speedR = 150;
+  else if(speedR > 160)
+    speedR = 160;
   if(speedL < 20)
     speedL = 20;
-  else if(speedL > 150)
-    speedL = 150;
+  else if(speedL > 160)
+    speedL = 160;
     
   analogWrite(motorR, speedR);
   analogWrite(motorL, speedL);
