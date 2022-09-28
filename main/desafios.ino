@@ -25,7 +25,7 @@ void identificarDesafio(){
   int contador = 1;
   bool lastWhite = true;
   while(true){
-    readAndSprint();
+    readReduzidoAndSprint();
     if(s5 && s6 && s7 && s8 && s9)
       break;
     if(!s9 && lastWhite)
@@ -39,4 +39,10 @@ void identificarDesafio(){
   else{
     roundabout(contador);
   }
+}
+
+void readReduzidoAndSprint(){
+  readS();
+  errorReduzido();
+  sprint();
 }

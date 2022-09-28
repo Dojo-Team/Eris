@@ -47,11 +47,6 @@ void loop() {
     sprint();
 }
 
-void readAndSprint(){
-  readS();
-  sprint();
-}
-
 void sprint ()
 {
   P = erro;
