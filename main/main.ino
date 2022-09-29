@@ -58,7 +58,7 @@ void sprint ()
   speedL += PID;
   speedR -= PID;
   int maxVelo = 180;
-  int minVelo = 20;
+  int minVelo = 50;
   if(speedR < minVelo)
     speedR = minVelo;  
   else if(speedR > maxVelo)
