@@ -8,7 +8,7 @@ bool s1, s2, s3, s4, s5, s6, s7, s8, s9;
 int motorR = 2, motorL = 7;
 
 //Constantes PID
-float Kp = 100, Ki = 0.1, Kd = 95;
+float Kp = 100, Ki = 0.05, Kd = 95;
 //float Kp = 76, Ki = 0.1, Kd = 73;
 
 
@@ -57,7 +57,7 @@ void sprint ()
   
   speedL += PID;
   speedR -= PID;
-  int maxVelo = 180;
+  int maxVelo = 185;
   int minVelo = 50;
   if(speedR < minVelo)
     speedR = minVelo;  
