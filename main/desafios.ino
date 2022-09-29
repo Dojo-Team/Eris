@@ -1,28 +1,28 @@
 void desafios(){
   if(s1 && !s3 && (s4 || s5 || s6)){
-    // Serial.print("Curva 90 esquerda\n");
-    // while(true){
-    //   if(s5 && s6 && s7 && s8 && s9)
-    //     break;
-    //   readReduzidoAndSprint();
-    // }
-    // curva90Esquerda();
+    Serial.print("Curva 90 esquerda\n");
+    while(true){
+      if(s5 && s6 && s7 && s8 && s9)
+        break;
+      readReduzidoAndSprint();
+    }
+    curva90Esquerda();
   }
   else if(s9 && s8 && !s7 && (s6 || s5 || s4)){
     Serial.print("Identificar Desafio\n");
-    identificarDesafio();
+    identificarDesafioDireita();
   }
   else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
     readReduzidoAndSprint(300);
     readS();
     if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-      analogWrite(motorR, 120);
-      analogWrite(motorL, 0);
+      analogWrite(motorR, 0);
+      analogWrite(motorL, 120);
       delay(200);
       readS();
       if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-        analogWrite(motorR, 0);
-        analogWrite(motorL, 120);
+        analogWrite(motorR, 150);
+        analogWrite(motorL, 0);
         delay(500);
         if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
           parar();
@@ -40,7 +40,39 @@ void desafios(){
   }
 }
 
-void identificarDesafio(){
+void identificarDesafioEsquerda(){
+  int contador = 1;
+  bool lastWhite = true;
+  while(true){
+    readReduzidoAndSprint();
+    Serial.print(contador);
+    Serial.print("\n");
+    if(s5 && s6 && s7 && s8 && s9)
+      break;
+    if(!s1 && lastWhite)
+      lastWhite = false;
+    else if(s1 && !lastWhite){
+      contador++;
+      lastWhite = true;
+    }
+  }
+
+  Serial.print(contador);
+  Serial.print("Final contador\n");
+
+  if(contador == 1){    
+    while(s5 && s6 && s7 && s8 && s9){
+      readReduzidoAndSprint();
+    }
+    curva90Esquerda();
+  }
+  else{
+    Serial.print("Rotatoria");
+    roundabout(contador, false);
+  }
+}
+
+void identificarDesafioDireita(){
   int contador = 1;
   bool lastWhite = true;
   while(true){
@@ -68,7 +100,7 @@ void identificarDesafio(){
   }
   else{
     Serial.print("Rotatoria");
-    roundabout(contador);
+    roundabout(contador, true);
   }
 }
 

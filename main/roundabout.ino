@@ -1,4 +1,4 @@
-void roundabout(int marcacoes)
+void roundabout(int marcacoes, bool isDireita)
 {
   Serial.print("Saída: ");
   Serial.print(marcacoes - 1);
@@ -8,9 +8,9 @@ void roundabout(int marcacoes)
   bool lastWhite = false;
   while(contador != marcacoes){
     readReduzidoAndSprint();
-    if(!s9 && lastWhite)
+    if((!s9 || !s1) && lastWhite)
       lastWhite = false;
-    else if(s9 && !lastWhite){
+    else if((!s9 || !s1) && !lastWhite){
       lastWhite = true;
       contador++;
     }
@@ -21,5 +21,8 @@ void roundabout(int marcacoes)
     readReduzidoAndSprint();
   }
   Serial.print("Fazer curva 90 direita");
-  curva90Direita();
+  if(isDireita)
+    curva90Direita();
+  else
+    curva90Esquerda();
 }

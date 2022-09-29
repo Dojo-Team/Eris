@@ -8,13 +8,17 @@ bool s1, s2, s3, s4, s5, s6, s7, s8, s9;
 int motorR = 2, motorL = 7;
 
 //Constantes PID
-float Kp = 26, Ki = 0.2, Kd = 23;
+float Kp = 76, Ki = 0.15, Kd = 50;
 //float Kp = 76, Ki = 0.1, Kd = 73;
-
+int const maxVelo = 190;
+int const minVelo = 35;
+int const maxI = 80; 
+int const minI = -80;
 
 //Variaveis para calcular o PID
 float P = 0, I = 0, D = 0, PID = 0;
-int erro = 0, erro_antes = 0;
+float erro = 0, erro_antes = 0, erro_d = 0;
+unsigned long time = 0, tempo_d = 0;
 
 //Identificador de faixa de pedestres
 bool faixa = false;
@@ -50,17 +54,24 @@ void loop() {
 
 void sprint ()
 {
+  if(erro != erro_antes){
+    tempo_d = time + 50;
+    erro_d = erro_d + erro - erro_antes;                   
+  }
+  if(tempo_d < time){
+    erro_d = 0;
+  }
   P = erro;
-  I = I + erro;
-  D = erro - erro_antes;
-  int const maxI = 50; 
+  D = erro_d;
   I = I > maxI ? maxI : I;
+  I = I < minI ? minI : I;
   PID = (Kp * P) + (Kd * D) + (Ki * I);
+  erro_antes = erro;
+  //Serial.print(P);Serial.print(" - ");Serial.print(I);Serial.print(" - ");Serial.print(D);Serial.print(" - ");Serial.print(PID);Serial.print("\n");
   
   speedL += PID;
   speedR -= PID;
-  int maxVelo = 185;
-  int minVelo = 50;
+
   if(speedR < minVelo)
     speedR = minVelo;  
   else if(speedR > maxVelo)
