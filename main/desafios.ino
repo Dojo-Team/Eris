@@ -13,6 +13,9 @@ void desafios(){
     identificarDesafio();
   }
   else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+    readReduzidoAndSprint(300);
+    readS();
+    if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
       analogWrite(motorR, 120);
       analogWrite(motorL, 0);
       delay(500);
@@ -25,8 +28,8 @@ void desafios(){
           parar();
           delay(7000);
         }
-        return;
-      }
+      } 
+    }
   }
   else if((s1 && s2 && s3 && !s5 && s7 && s8 && s9) && (!s4 || !s6)){
     Serial.print("Faixa\n");
