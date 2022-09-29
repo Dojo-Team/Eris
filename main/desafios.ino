@@ -1,33 +1,32 @@
 void desafios(){
   if(s1 && !s3 && (s4 || s5 || s6)){
-    Serial.print("Curva 90 esquerda\n");
-   while(true){
-    if(s5 && s6 && s7 && s8 && s9)
-      break;
-    readReduzidoAndSprint();
+    // Serial.print("Curva 90 esquerda\n");
+    // while(true){
+    //   if(s5 && s6 && s7 && s8 && s9)
+    //     break;
+    //   readReduzidoAndSprint();
+    // }
+    // curva90Esquerda();
   }
-  curva90Esquerda();
-  }
-  else if(s9 && !s7 && (s6 || s5 || s4)){
+  else if(s9 && s8 && !s7 && (s6 || s5 || s4)){
     Serial.print("Identificar Desafio\n");
     identificarDesafio();
   }
-  else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-      analogWrite(motorR, 100);
-      analogWrite(motorL, 100);
-      delay(1000);
-      readS();
-      if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-        parar();
-        delay(5000);
-      }
-  }
+  // else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+  //     analogWrite(motorR, 100);
+  //     analogWrite(motorL, 100);
+  //     delay(1000);
+  //     readS();
+  //     if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+  //       parar();
+  //       delay(5000);
+  //     }
+  // }
   else if((s1 && s2 && s3 && !s5 && s7 && s8 && s9) && (!s4 || !s6)){
     Serial.print("Faixa\n");
     faixa = true;
     while(faixa){
       faixaPedestre();
-
     }
   }
 }
