@@ -12,16 +12,22 @@ void desafios(){
     Serial.print("Identificar Desafio\n");
     identificarDesafio();
   }
-  // else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-  //     analogWrite(motorR, 100);
-  //     analogWrite(motorL, 100);
-  //     delay(1000);
-  //     readS();
-  //     if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-  //       parar();
-  //       delay(5000);
-  //     }
-  // }
+  else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+      analogWrite(motorR, 120);
+      analogWrite(motorL, 0);
+      delay(500);
+      readS();
+      if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+        analogWrite(motorR, 0);
+        analogWrite(motorL, 120);
+        delay(500);
+        if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+          parar();
+          delay(7000);
+        }
+        return;
+      }
+  }
   else if((s1 && s2 && s3 && !s5 && s7 && s8 && s9) && (!s4 || !s6)){
     Serial.print("Faixa\n");
     faixa = true;
