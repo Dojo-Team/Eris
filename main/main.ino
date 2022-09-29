@@ -8,7 +8,7 @@ bool s1, s2, s3, s4, s5, s6, s7, s8, s9;
 int motorR = 2, motorL = 7;
 
 //Constantes PID
-float Kp = 100, Ki = 0.05, Kd = 95;
+float Kp = 26, Ki = 0.2, Kd = 23;
 //float Kp = 76, Ki = 0.1, Kd = 73;
 
 
@@ -53,6 +53,8 @@ void sprint ()
   P = erro;
   I = I + erro;
   D = erro - erro_antes;
+  int const maxI = 50; 
+  I = I > maxI ? maxI : I;
   PID = (Kp * P) + (Kd * D) + (Ki * I);
   
   speedL += PID;
