@@ -1,11 +1,11 @@
 void curva90Direita(){
-  analogWrite(motorL, 150);
+  analogWrite(motorL, 165);
   analogWrite(motorR, 0);
   delay(800);
 }
 
 void curva90Esquerda(){
   analogWrite(motorL, 0);
-  analogWrite(motorR, 150);
+  analogWrite(motorR, 165);
   delay(800);
 }

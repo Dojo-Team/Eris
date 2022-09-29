@@ -1,6 +1,6 @@
 void readS()
 {
-  int f = 150;
+  int f = 350;
   s1 = analogRead(A0) < f;
   s2 = analogRead(A1) < f;
   s3 = analogRead(A2) < f;
