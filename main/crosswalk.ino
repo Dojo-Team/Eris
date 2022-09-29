@@ -13,7 +13,7 @@ void faixaPedestre()
 		parar();
 		delay(6000);
 		analogWrite(motorR, 150);
-		analogWrite(motorL, 150);
+		analogWrite(motorL, 140);
 		delay(1000);
 		faixa = false;
 	}

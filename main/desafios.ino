@@ -16,13 +16,13 @@ void desafios(){
     readReduzidoAndSprint(300);
     readS();
     if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-      analogWrite(motorR, 120);
-      analogWrite(motorL, 0);
+      analogWrite(motorR, 0);
+      analogWrite(motorL, 120);
       delay(200);
       readS();
       if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-        analogWrite(motorR, 0);
-        analogWrite(motorL, 120);
+        analogWrite(motorR, 120);
+        analogWrite(motorL, 0);
         delay(500);
         if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
           parar();
