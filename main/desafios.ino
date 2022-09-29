@@ -10,14 +10,14 @@ void desafios(){
     identificarDesafio();
     Serial.print("Identificar Desafio");
   }
-  else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-      analogWrite(motorR, 0);
-      analogWrite(motorL, 0);
-      readS();
-      if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-        delay(5000);
-      }
-  }
+  // else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+  //     analogWrite(motorR, 0);
+  //     analogWrite(motorL, 0);
+  //     readS();
+  //     if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+  //       delay(5000);
+  //     }
+  // }
   else if((s1 && s2 && s3 && !s5 && s7 && s8 && s9) && (!s4 || !s6)){
     faixa = true;
     while(faixa){

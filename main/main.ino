@@ -8,7 +8,7 @@ bool s1, s2, s3, s4, s5, s6, s7, s8, s9;
 int motorR = 2, motorL = 7;
 
 //Constantes PID
-float Kp = 15, Ki = 0.1, Kd = 2;
+float Kp = 76, Ki = 0, Kd = 38;
 //float Kp = 15, Ki = 0.1, Kd = 2;
 
 //Variaveis para calcular o PID
@@ -19,7 +19,7 @@ int erro = 0, erro_antes = 0;
 bool faixa = false;
 
 //Velocidades iniciais dos motores
-int speedR = 100, speedL = 100;
+int speedR = 200, speedL = 200;
 
 void setup() {
     //MOTORES
@@ -39,12 +39,12 @@ void setup() {
 
 void loop() {
     readS();
-    // Serial.print(s1);Serial.print(" ");Serial.print(s2);Serial.print(" ");Serial.print(s3);Serial.print(" ");
-    // Serial.print(s4);Serial.print(" ");Serial.print(s5);Serial.print(" ");Serial.print(s6);Serial.print(" ");
-    // Serial.print(s7);Serial.print(" ");Serial.print(s8);Serial.print(" ");Serial.print(s9);Serial.print("\n");
     error();
     desafios();
     sprint();
+    // Serial.print(s1);Serial.print(" ");Serial.print(s2);Serial.print(" ");Serial.print(s3);Serial.print(" ");
+    // Serial.print(s4);Serial.print(" ");Serial.print(s5);Serial.print(" ");Serial.print(s6);Serial.print(" ");
+    // Serial.print(s7);Serial.print(" ");Serial.print(s8);Serial.print(" ");Serial.print(s9);Serial.print("\n");
 }
 
 void sprint ()
@@ -56,15 +56,16 @@ void sprint ()
   
   speedL += PID;
   speedR -= PID;
-
-  if(speedR < 20)
-    speedR = 20;  
-  else if(speedR > 160)
-    speedR = 160;
-  if(speedL < 20)
-    speedL = 20;
-  else if(speedL > 160)
-    speedL = 160;
+  int maxVelo = 180;
+  int minVelo = 20;
+  if(speedR < minVelo)
+    speedR = minVelo;  
+  else if(speedR > maxVelo)
+    speedR = maxVelo;
+  if(speedL < minVelo)
+    speedL = minVelo;
+  else if(speedL > maxVelo)
+    speedL = maxVelo;
     
   analogWrite(motorR, speedR);
   analogWrite(motorL, speedL);
