@@ -18,7 +18,7 @@ void desafios(){
     if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
       analogWrite(motorR, 120);
       analogWrite(motorL, 0);
-      delay(500);
+      delay(200);
       readS();
       if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
         analogWrite(motorR, 0);
