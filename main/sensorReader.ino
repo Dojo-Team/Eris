@@ -1,6 +1,6 @@
 void readS()
 {
-  int f = 350;
+  int f = 200;
   s1 = analogRead(A0) < f;
   s2 = analogRead(A1) < f;
   s3 = analogRead(A2) < f;
@@ -10,9 +10,9 @@ void readS()
   s7 = analogRead(A6) < f;
   s8 = analogRead(A7) < f;
   s9 = analogRead(A8) < f;
-  Serial.print(analogRead(A0));Serial.print(" ");Serial.print(analogRead(A1));Serial.print(" ");Serial.print(analogRead(A2));Serial.print(" ");
-  Serial.print(analogRead(A3));Serial.print(" ");Serial.print(analogRead(A4));Serial.print(" ");Serial.print(analogRead(A5));Serial.print(" ");
-  Serial.print(analogRead(A6));Serial.print(" ");Serial.print(analogRead(A7));Serial.print(" ");Serial.print(analogRead(A8));Serial.print("\n");
+  // Serial.print(analogRead(A0));Serial.print(" ");Serial.print(analogRead(A1));Serial.print(" ");Serial.print(analogRead(A2));Serial.print(" ");
+  // Serial.print(analogRead(A3));Serial.print(" ");Serial.print(analogRead(A4));Serial.print(" ");Serial.print(analogRead(A5));Serial.print(" ");
+  // Serial.print(analogRead(A6));Serial.print(" ");Serial.print(analogRead(A7));Serial.print(" ");Serial.print(analogRead(A8));Serial.print("\n");
 }
 
 void error()
