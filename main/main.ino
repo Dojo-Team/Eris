@@ -10,8 +10,8 @@ int motorR = 2, motorL = 7;
 //Constantes PID
 float Kp = 95, Ki = 0.2, Kd = 80;
 //float Kp = 76, Ki = 0.1, Kd = 73;
-int const maxVelo = 190;
-int const minVelo = 30;
+int const maxVelo = 240;
+int const minVelo = 35;
 int const maxI = 80; 
 int const minI = -80;
 
@@ -83,4 +83,44 @@ void sprint ()
     
   analogWrite(motorR, speedR);
   analogWrite(motorL, speedL);
+}
+
+void parar(int ms) {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, HIGH);
+  delay(ms);
+  andarFrente();
+}
+
+void andarFrente(){
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN3, LOW);
+  digitalWrite(IN4, HIGH);
+}
+
+void darReDireita(int ms, int velocidade){
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  
+  analogWrite(motorR, velocidade);
+  analogWrite(motorL, 0);
+  delay(ms);
+  andarFrente();
+}
+
+void darRe(int ms, int velocidade){
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN3, HIGH);
+  digitalWrite(IN4, LOW);
+  
+  analogWrite(motorR, velocidade);
+  analogWrite(motorL, velocidade);
+  delay(ms);
+  andarFrente();
 }

@@ -10,16 +10,27 @@ void faixaPedestre()
 		sprint();
 	}
 	else if (!s3 && !s4 && !s5 && !s6 && !s7) {
-		parar();
-		delay(6000);
-		analogWrite(motorR, 155);
-		analogWrite(motorL, 140);
-		delay(1000);
+		parar(6000);
+		analogWrite(motorR, 135);
+		analogWrite(motorL, 165);
+		delay(800);
+    darRe(200, 70);
+    readS();
+    bool isDireita = true;
+    while(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+      readS();
+      if(isDireita){
+        analogWrite(motorR, 0);
+		    analogWrite(motorL, 165);
+        delay(250);
+      }
+      else{
+        analogWrite(motorR, 165);
+		    analogWrite(motorL, 0);
+        delay(350);
+      }
+      isDireita = !isDireita;
+    }
 		faixa = false;
 	}
-}
-
-void parar() {
-	analogWrite(motorR, 0);
-	analogWrite(motorL, 0);
 }

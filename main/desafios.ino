@@ -1,11 +1,11 @@
 void desafios(){
   if(s1 && !s3 && (s4 || s5 || s6) && !s7){
-    readReduzidoAndSprint(50);
-    readS();
-    if(s1 && !s3 && (s4 || s5 || s6) && !s7){
-      Serial.print("Identificar desafio esquerda\n");
-      identificarDesafioEsquerda();
-    }
+    // readReduzidoAndSprint(50);
+    // readS();
+    // if(s1 && !s3 && (s4 || s5 || s6) && !s7){
+    //   Serial.print("Identificar desafio esquerda\n");
+    //   identificarDesafioEsquerda();
+    // }
   }
   else if(s9 && !s7 && (s6 || s5 || s4) && !s3){
     readReduzidoAndSprint(50);
@@ -28,13 +28,12 @@ void desafios(){
         analogWrite(motorL, 0);
         delay(500);
         if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
-          parar();
-          delay(7000);
+          parar(7000);
         }
       } 
     }
   }
-  else if((s1 && s2 && s3 && !s5 && s7 && s8 && s9) && (!s4 || !s6)){
+  else if((s1 && s2 && s3 && !s5 && s7 && s8 && s9) && (s4 || s6)){
     Serial.print("Faixa\n");
     faixa = true;
     while(faixa){
