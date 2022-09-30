@@ -1,31 +1,24 @@
 void curva90Direita(){
-  analogWrite(motorL, 130);
-  analogWrite(motorR, 0);
-  int contador = 0;
-  bool lastWhite = false;
-  while(contador < 3){
+  while(s6){
+    readReduzidoAndSprint();
+  }
+  while(!s6){
+    analogWrite(motorL, 130);
+    analogWrite(motorR, 0);
     readS();
-    if(lastWhite && !s2)
-      lastWhite = false;
-    else if(!lastWhite && s2){
-      lastWhite = true;
-      contador++;
-    }
   }
 }
 
 void curva90Esquerda(){
+  while(s3){
+    readReduzidoAndSprint();
+  }
+  analogWrite(motorR, 0);
   analogWrite(motorL, 0);
-  analogWrite(motorR, 130);
-  int contador = 0;
-  bool lastWhite = false;
-  while(contador < 3){
+  delay(50);
+  while(!s3){
+    analogWrite(motorR, 130);
+    analogWrite(motorL, 0);
     readS();
-    if(lastWhite && !s8 && !s8)
-      lastWhite = false;
-    else if(!lastWhite && s8 && s8){
-      lastWhite = true;
-      contador++;
-    }
   }
 }

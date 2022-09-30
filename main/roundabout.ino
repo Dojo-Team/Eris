@@ -8,7 +8,7 @@ void roundabout(int marcacoes, bool isDireita)
   else
     curva90Esquerda();
   int contador = 1;
-  bool lastWhite = false;
+  bool lastWhite = true;
   while(contador != marcacoes){
     readReduzidoAndSprint();
     if(s4 && s6 && lastWhite)
