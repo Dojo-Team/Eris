@@ -12,7 +12,7 @@ void faixaPedestre()
 	else if (!s3 && !s4 && !s5 && !s6 && !s7) {
 		parar();
 		delay(6000);
-		analogWrite(motorR, 160);
+		analogWrite(motorR, 155);
 		analogWrite(motorL, 140);
 		delay(1000);
 		faixa = false;

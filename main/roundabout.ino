@@ -3,14 +3,17 @@ void roundabout(int marcacoes, bool isDireita)
   Serial.print("Saída: ");
   Serial.print(marcacoes - 1);
   Serial.print("\n");
-  curva90Direita();
+  if(isDireita)
+    curva90Direita();
+  else
+    curva90Esquerda();
   int contador = 1;
   bool lastWhite = false;
   while(contador != marcacoes){
     readReduzidoAndSprint();
-    if((!s9 || !s1) && lastWhite)
+    if(s4 && s6 && lastWhite)
       lastWhite = false;
-    else if((!s9 || !s1) && !lastWhite){
+    else if(s4 && s6  && !lastWhite){
       lastWhite = true;
       contador++;
     }

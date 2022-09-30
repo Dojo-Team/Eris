@@ -8,10 +8,10 @@ bool s1, s2, s3, s4, s5, s6, s7, s8, s9;
 int motorR = 2, motorL = 7;
 
 //Constantes PID
-float Kp = 76, Ki = 0.15, Kd = 50;
+float Kp = 95, Ki = 0.2, Kd = 80;
 //float Kp = 76, Ki = 0.1, Kd = 73;
 int const maxVelo = 190;
-int const minVelo = 35;
+int const minVelo = 30;
 int const maxI = 80; 
 int const minI = -80;
 

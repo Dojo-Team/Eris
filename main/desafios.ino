@@ -1,16 +1,19 @@
 void desafios(){
-  if(s1 && !s3 && (s4 || s5 || s6)){
-    Serial.print("Curva 90 esquerda\n");
-    while(true){
-      if(s5 && s6 && s7 && s8 && s9)
-        break;
-      readReduzidoAndSprint();
+  if(s1 && s2 && !s3 && (s4 || s5 || s6) && !s7){
+    readReduzidoAndSprint(50);
+    readS();
+    if(s1 && s2 && !s3 && (s4 || s5 || s6) && !s7){
+      Serial.print("Identificar desafio esquerda\n");
+      identificarDesafioEsquerda();
     }
-    curva90Esquerda();
   }
-  else if(s9 && s8 && !s7 && (s6 || s5 || s4)){
-    Serial.print("Identificar Desafio\n");
-    identificarDesafioDireita();
+  else if(s9 && s8 && !s7 && (s6 || s5 || s4) && !s3){
+    readReduzidoAndSprint(50);
+    readS();
+    if(s9 && s8 && !s7 && (s6 || s5 || s4) && !s3){
+      Serial.print("Identificar desafio direita\n");
+      identificarDesafioDireita();
+    }
   }
   else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
     readReduzidoAndSprint(300);
@@ -47,7 +50,7 @@ void identificarDesafioEsquerda(){
     readReduzidoAndSprint();
     Serial.print(contador);
     Serial.print("\n");
-    if(s5 && s6 && s7 && s8 && s9)
+    if(s1 && s2 && s3 && s4 && s5)
       break;
     if(!s1 && lastWhite)
       lastWhite = false;
@@ -63,6 +66,7 @@ void identificarDesafioEsquerda(){
   if(contador == 1){    
     while(s5 && s6 && s7 && s8 && s9){
       readReduzidoAndSprint();
+      readS();
     }
     curva90Esquerda();
   }
@@ -95,6 +99,7 @@ void identificarDesafioDireita(){
   if(contador == 1){    
     while(s5 && s6 && s7 && s8 && s9){
       readReduzidoAndSprint();
+      readS();
     }
     curva90Direita();
   }

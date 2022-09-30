@@ -39,37 +39,34 @@ void error()
 
 void errorI()
 {
-  if      (!s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -8;}  // Sensor 1     na linha branca
-  else if (!s1 && !s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -7;}  // Sensor 1 e 2 na linha branca
-  else if ( s1 && !s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -6;}  // Sensor 2     na linha branca
-  else if ( s1 && !s2 && !s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -5;}  // Sensor 2 e 3 na linha branca
-  else if ( s1 &&  s2 && !s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -4;}  // Sensor 3     na linha branca
-  else if ( s1 &&  s2 && !s3 && !s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -3;}  // Sensor 3 e 4 na linha branca
-  else if ( s1 &&  s2 &&  s3 && !s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -2;}  // Sensor 4     na linha branca
-  else if ( s1 &&  s2 &&  s3 && !s4 && !s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -1;}  // Sensor 4 e 5 na linha branca
-  else if ( s1 &&  s2 &&  s3 &&  s4 && !s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro =  0;}  // Sensor 5     na linha branca        POSIÇÃO IDEAL
-  else if ( s1 &&  s2 &&  s3 &&  s4 && !s5 && !s6 &&  s7 &&  s8 &&  s9) {erro =  1;}  // Sensor 5 e 6 na linha brancas
-  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 && !s6 &&  s7 &&  s8 &&  s9) {erro =  2;}  // Sensor 6     na linha branca
-  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 && !s6 && !s7 &&  s8 &&  s9) {erro =  3;}  // Sensor 6 e 7 na linha branca
-  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 && !s7 &&  s8 &&  s9) {erro =  4;}  // Sensor 7     na linha branca
-  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 && !s7 && !s8 &&  s9) {erro =  5;}  // Sensor 7 e 8 na linha branca
-  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 && !s8 &&  s9) {erro =  6;}  // Sensor 8     na linha branca
-  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 && !s8 && !s9) {erro =  7;}  // Sensor 8 e 9 na linha branca
-  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 && !s9) {erro =  8;}  // Sensor 9     na linha branca
+  if      (!s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -3.42;}  // Sensor 1     na linha branca
+  else if (!s1 && !s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -3.00;}  // Sensor 1 e 2 na linha branca
+  else if ( s1 && !s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -2.59;}  // Sensor 2     na linha branca
+  else if ( s1 && !s2 && !s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -2.16;}  // Sensor 2 e 3 na linha branca
+  else if ( s1 &&  s2 && !s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -1.74;}  // Sensor 3     na linha branca
+  else if ( s1 &&  s2 && !s3 && !s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -1.31;}  // Sensor 3 e 4 na linha branca
+  else if ( s1 &&  s2 &&  s3 && !s4 &&  s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -0.87;}  // Sensor 4     na linha branca
+  else if ( s1 &&  s2 &&  s3 && !s4 && !s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro = -0.44;}  // Sensor 4 e 5 na linha branca
+  else if ( s1 &&  s2 &&  s3 &&  s4 && !s5 &&  s6 &&  s7 &&  s8 &&  s9) {erro =  0;}     // Sensor 5     na linha branca        POSIÇÃO IDEAL
+  else if ( s1 &&  s2 &&  s3 &&  s4 && !s5 && !s6 &&  s7 &&  s8 &&  s9) {erro =  0.44;}  // Sensor 5 e 6 na linha brancas
+  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 && !s6 &&  s7 &&  s8 &&  s9) {erro =  0.87;}  // Sensor 6     na linha branca
+  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 && !s6 && !s7 &&  s8 &&  s9) {erro =  1.31;}  // Sensor 6 e 7 na linha branca
+  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 && !s7 &&  s8 &&  s9) {erro =  1.74;}  // Sensor 7     na linha branca
+  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 && !s7 && !s8 &&  s9) {erro =  2.16;}  // Sensor 7 e 8 na linha branca
+  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 && !s8 &&  s9) {erro =  2.59;}  // Sensor 8     na linha branca
+  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 && !s8 && !s9) {erro =  3.00;}  // Sensor 8 e 9 na linha branca
+  else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 && !s9) {erro =  3.42;}  // Sensor 9     na linha branca
 }
 
 void errorReduzido()
 {
-  if      (!s3 && !s4 && !s5 && !s6 && !s7) {erro = -6;}  // Sensor 2     na linha branca
-  else if ( s3 && !s4 && !s5 && !s6 && !s7) {erro = -5;}  // Sensor 2 e 3 na linha branca
-  else if ( s3 &&  s4 && !s5 && !s6 && !s7) {erro = -3;}  // Sensor 3 e 4 na linha branca
-  else if (!s3 &&  s4 && !s5 && !s6 && !s7) {erro = -2;}  // Sensor 4     na linha branca
-  else if (!s3 &&  s4 &&  s5 && !s6 && !s7) {erro = -1;}  // Sensor 4 e 5 na linha branca
+  if      ( s3 && !s4 && !s5 && !s6 && !s7) {erro = -1.74;}  // Sensor 2 e 3 na linha branca
+  else if ( s3 &&  s4 && !s5 && !s6 && !s7) {erro = -1.31;}  // Sensor 3 e 4 na linha branca
+  else if (!s3 &&  s4 && !s5 && !s6 && !s7) {erro = -0.87;}  // Sensor 4     na linha branca
+  else if (!s3 &&  s4 &&  s5 && !s6 && !s7) {erro = -0.44;}  // Sensor 4 e 5 na linha branca
   else if (!s3 && !s4 &&  s5 && !s6 && !s7) {erro =  0;}  // Sensor 5     na linha branca        POSIÇÃO IDEAL
-  else if (!s3 && !s4 &&  s5 &&  s6 && !s7) {erro =  1;}  // Sensor 5 e 6 na linha branca
-  else if (!s3 && !s4 && !s5 &&  s6 && !s7) {erro =  2;}  // Sensor 6     na linha branca
-  else if (!s3 && !s4 && !s5 &&  s6 &&  s7) {erro =  3;}  // Sensor 6 e 7 na linha branca
-  else if (!s3 && !s4 && !s5 && !s6 &&  s7) {erro =  4;}  // Sensor 7     na linha branca
-  else if (!s3 && !s4 && !s5 && !s6 &&  s7) {erro =  5;}  // Sensor 7 e 8 na linha branca
-  else if (!s3 && !s4 && !s5 && !s6 && !s7) {erro =  6;}  // Sensor 8     na linha branca
+  else if (!s3 && !s4 &&  s5 &&  s6 && !s7) {erro =  0.44;}  // Sensor 5 e 6 na linha branca
+  else if (!s3 && !s4 && !s5 &&  s6 && !s7) {erro =  0.87;}  // Sensor 6     na linha branca
+  else if (!s3 && !s4 && !s5 &&  s6 &&  s7) {erro =  1.31;}  // Sensor 6 e 7 na linha branca
+  else if (!s3 && !s4 && !s5 && !s6 &&  s7) {erro =  1.74;}  // Sensor 7     na linha branca
 }
