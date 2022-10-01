@@ -32,14 +32,9 @@ void setup() {
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
-
+  
   Serial.begin(9600);
-
-  //MOTORES SEMPRE ANDAM PARA FRENTE
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, LOW);
-  digitalWrite(IN3, LOW);
-  digitalWrite(IN4, HIGH);
+  definirMotoresFrente();
 }
 
 void loop() {
