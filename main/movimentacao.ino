@@ -76,3 +76,18 @@ void darRe(int ms, int velocidade){
   delay(ms);
   definirMotoresFrente();
 }
+
+void readReduzidoAndSprint(){
+  readS();
+  errorReduzido5Sensores();
+  sprint();
+}
+
+void readReduzidoAndSprint(int ms){
+  int inicio = millis();
+  while(millis() < inicio + ms){
+    readS();
+    errorReduzido5Sensores();
+    sprint();
+  }
+}

@@ -17,7 +17,7 @@ void faixaPedestre()
     darRe(200, 70);
     readS();
     bool isDireita = true;
-    while(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+    while(tudoPreto()){
       readS();
       if(isDireita){
         analogWrite(motorR, 0);

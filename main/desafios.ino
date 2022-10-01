@@ -15,19 +15,19 @@ void desafios(){
       identificarDesafioDireita();
     }
   }
-  else if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+  else if(tudoPreto()){
     readReduzidoAndSprint(300);
     readS();
-    if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+    if(tudoPreto()){
       analogWrite(motorR, 0);
       analogWrite(motorL, 120);
       delay(200);
       readS();
-      if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+      if(tudoPreto()){
         analogWrite(motorR, 150);
         analogWrite(motorL, 0);
         delay(500);
-        if(!s1 && !s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8 && !s9){
+        if(tudoPreto()){
           parar(7000);
         }
       } 
@@ -107,19 +107,3 @@ void identificarDesafioDireita(){
     roundabout(contador, true);
   }
 }
-
-void readReduzidoAndSprint(){
-  readS();
-  errorReduzido();
-  sprint();
-}
-
-void readReduzidoAndSprint(int ms){
-  int inicio = millis();
-  while(millis() < inicio + ms){
-    readS();
-    errorReduzido();
-    sprint();
-  }
-}
-
