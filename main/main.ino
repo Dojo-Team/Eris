@@ -27,100 +27,24 @@ bool faixa = false;
 int speedR = 200, speedL = 200;
 
 void setup() {
-    //MOTORES
-    pinMode(IN1, OUTPUT);
-    pinMode(IN2, OUTPUT);
-    pinMode(IN3, OUTPUT);
-    pinMode(IN4, OUTPUT);
+  //MOTORES
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
 
-    Serial.begin(9600);
+  Serial.begin(9600);
 
-    //MOTORES SEMPRE ANDAM PARA FRENTE
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, LOW);
-    digitalWrite(IN3, LOW);
-    digitalWrite(IN4, HIGH);
-}
-
-void loop() {
-    readS();
-    error();
-    desafios();
-    sprint();
-    // Serial.print(s1);Serial.print(" ");Serial.print(s2);Serial.print(" ");Serial.print(s3);Serial.print(" ");
-    // Serial.print(s4);Serial.print(" ");Serial.print(s5);Serial.print(" ");Serial.print(s6);Serial.print(" ");
-    // Serial.print(s7);Serial.print(" ");Serial.print(s8);Serial.print(" ");Serial.print(s9);Serial.print("\n");
-}
-
-void sprint ()
-{
-  if(erro != erro_antes){
-    tempo_d = time + 50;
-    erro_d = erro_d + erro - erro_antes;                   
-  }
-  if(tempo_d < time){
-    erro_d = 0;
-  }
-  P = erro;
-  D = erro_d;
-  I = I > maxI ? maxI : I;
-  I = I < minI ? minI : I;
-  PID = (Kp * P) + (Kd * D) + (Ki * I);
-  erro_antes = erro;
-  //Serial.print(P);Serial.print(" - ");Serial.print(I);Serial.print(" - ");Serial.print(D);Serial.print(" - ");Serial.print(PID);Serial.print("\n");
-  
-  speedL += PID;
-  speedR -= PID;
-
-  if(speedR < minVelo)
-    speedR = minVelo;  
-  else if(speedR > maxVelo)
-    speedR = maxVelo;
-  if(speedL < minVelo)
-    speedL = minVelo;
-  else if(speedL > maxVelo)
-    speedL = maxVelo;
-    
-  analogWrite(motorR, speedR);
-  analogWrite(motorL, speedL);
-}
-
-void parar(int ms) {
-  digitalWrite(IN1, HIGH);
-  digitalWrite(IN2, HIGH);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, HIGH);
-  delay(ms);
-  andarFrente();
-}
-
-void andarFrente(){
+  //MOTORES SEMPRE ANDAM PARA FRENTE
   digitalWrite(IN1, HIGH);
   digitalWrite(IN2, LOW);
   digitalWrite(IN3, LOW);
   digitalWrite(IN4, HIGH);
 }
 
-void darReDireita(int ms, int velocidade){
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
-  
-  analogWrite(motorR, velocidade);
-  analogWrite(motorL, 0);
-  delay(ms);
-  andarFrente();
-}
-
-void darRe(int ms, int velocidade){
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, HIGH);
-  digitalWrite(IN3, HIGH);
-  digitalWrite(IN4, LOW);
-  
-  analogWrite(motorR, velocidade);
-  analogWrite(motorL, velocidade);
-  delay(ms);
-  andarFrente();
+void loop() {
+  readS();
+  error();
+  desafios();
+  sprint();
 }

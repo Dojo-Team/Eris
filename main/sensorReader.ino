@@ -1,7 +1,8 @@
+#define f 350
+
 void readS()
 {
   time = millis();  
-  int f = 350;
   s1 = analogRead(A0) < f;
   s2 = analogRead(A1) < f;
   s3 = analogRead(A2) < f;
@@ -11,9 +12,6 @@ void readS()
   s7 = analogRead(A6) < f;
   s8 = analogRead(A7) < f;
   s9 = analogRead(A8) < f;
-  // Serial.print(analogRead(A0));Serial.print(" ");Serial.print(analogRead(A1));Serial.print(" ");Serial.print(analogRead(A2));Serial.print(" ");
-  // Serial.print(analogRead(A3));Serial.print(" ");Serial.print(analogRead(A4));Serial.print(" ");Serial.print(analogRead(A5));Serial.print(" ");
-  // Serial.print(analogRead(A6));Serial.print(" ");Serial.print(analogRead(A7));Serial.print(" ");Serial.print(analogRead(A8));Serial.print("\n");
 }
 
 void error()
@@ -69,4 +67,10 @@ void errorReduzido()
   else if (!s3 && !s4 && !s5 &&  s6 && !s7) {erro =  0.87;}  // Sensor 6     na linha branca
   else if (!s3 && !s4 && !s5 &&  s6 &&  s7) {erro =  1.31;}  // Sensor 6 e 7 na linha branca
   else if (!s3 && !s4 && !s5 && !s6 &&  s7) {erro =  1.74;}  // Sensor 7     na linha branca
+}
+
+void imprimeLeituraAnalogica(){
+  Serial.print(analogRead(A0));Serial.print(" ");Serial.print(analogRead(A1));Serial.print(" ");Serial.print(analogRead(A2));Serial.print(" ");
+  Serial.print(analogRead(A3));Serial.print(" ");Serial.print(analogRead(A4));Serial.print(" ");Serial.print(analogRead(A5));Serial.print(" ");
+  Serial.print(analogRead(A6));Serial.print(" ");Serial.print(analogRead(A7));Serial.print(" ");Serial.print(analogRead(A8));Serial.print("\n");
 }

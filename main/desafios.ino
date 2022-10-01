@@ -1,11 +1,11 @@
 void desafios(){
   if(s1 && !s3 && (s4 || s5 || s6) && !s7){
-    // readReduzidoAndSprint(50);
-    // readS();
-    // if(s1 && !s3 && (s4 || s5 || s6) && !s7){
-    //   Serial.print("Identificar desafio esquerda\n");
-    //   identificarDesafioEsquerda();
-    // }
+    readReduzidoAndSprint(50);
+    readS();
+    if(s1 && !s3 && (s4 || s5 || s6) && !s7){
+      Serial.print("Identificar desafio esquerda\n");
+      identificarDesafioEsquerda();
+    }
   }
   else if(s9 && !s7 && (s6 || s5 || s4) && !s3){
     readReduzidoAndSprint(50);
