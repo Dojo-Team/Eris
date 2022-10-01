@@ -44,7 +44,7 @@ void setup() {
 
 void loop() {
   readS();
-  error();
   desafios();
+  error();
   sprint();
 }

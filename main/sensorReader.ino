@@ -54,6 +54,7 @@ void errorI()
   else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 && !s8 &&  s9) {erro =  2.59;}  // Sensor 8     na linha branca
   else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 && !s8 && !s9) {erro =  3.00;}  // Sensor 8 e 9 na linha branca
   else if ( s1 &&  s2 &&  s3 &&  s4 &&  s5 &&  s6 &&  s7 &&  s8 && !s9) {erro =  3.42;}  // Sensor 9     na linha branca
+  else errorReduzido();
 }
 
 void errorReduzido()
