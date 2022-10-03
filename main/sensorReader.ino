@@ -57,6 +57,24 @@ void errorI()
   else errorReduzido5Sensores();
 }
 
+void errorReduzido7Sensores()
+{
+  if      ( s2 && !s3 && !s4 && !s5 && !s6 && !s7 && !s8) erro = -2.59;  // Sensor 2     na linha branca
+  else if ( s2 &&  s3 && !s4 && !s5 && !s6 && !s7 && !s8) erro = -2.16;  // Sensor 2 e 3 na linha branca
+  else if (!s2 &&  s3 && !s4 && !s5 && !s6 && !s7 && !s8) erro = -1.74;  // Sensor 3     na linha branca
+  else if (!s2 &&  s3 &&  s4 && !s5 && !s6 && !s7 && !s8) erro = -1.31;  // Sensor 3 e 4 na linha branca
+  else if (!s2 && !s3 &&  s4 && !s5 && !s6 && !s7 && !s8) erro = -0.87;  // Sensor 4     na linha branca
+  else if (!s2 && !s3 &&  s4 &&  s5 && !s6 && !s7 && !s8) erro = -0.44;  // Sensor 4 e 5 na linha branca
+  else if (!s2 && !s3 && !s4 &&  s5 && !s6 && !s7 && !s8) erro =  0;     // Sensor 5     na linha branca        POSIÇÃO IDEAL
+  else if (!s2 && !s3 && !s4 &&  s5 &&  s6 && !s7 && !s8) erro =  0.44;  // Sensor 5 e 6 na linha branca
+  else if (!s2 && !s3 && !s4 && !s5 &&  s6 && !s7 && !s8) erro =  0.87;  // Sensor 6     na linha branca
+  else if (!s2 && !s3 && !s4 && !s5 &&  s6 &&  s7 && !s8) erro =  1.31;  // Sensor 6 e 7 na linha branca
+  else if (!s2 && !s3 && !s4 && !s5 && !s6 &&  s7 && !s8) erro =  1.74;  // Sensor 7     na linha branca
+  else if (!s2 && !s3 && !s4 && !s5 && !s6 &&  s7 &&  s8) erro =  2.16;  // Sensor 7 e 8 na linha branca
+  else if (!s2 && !s3 && !s4 && !s5 && !s6 && !s7 &&  s8) erro =  2.59;  // Sensor 8     na linha branca
+  else errorReduzido5Sensores();
+}
+
 void errorReduzido5Sensores()
 {
   if      ( s3 && !s4 && !s5 && !s6 && !s7) erro = -1.74;  // Sensor 2 e 3 na linha branca
@@ -73,11 +91,11 @@ void errorReduzido5Sensores()
 
 void errorReduzido3Sensores()
 {
-  if      (!s3 &&  s4 && !s5 && !s6 && !s7) erro = -0.87;  // Sensor 4     na linha branca
-  else if (!s3 &&  s4 &&  s5 && !s6 && !s7) erro = -0.44;  // Sensor 4 e 5 na linha branca
-  else if (!s3 && !s4 &&  s5 && !s6 && !s7) erro =  0;     // Sensor 5     na linha branca        POSIÇÃO IDEAL
-  else if (!s3 && !s4 &&  s5 &&  s6 && !s7) erro =  0.44;  // Sensor 5 e 6 na linha branca
-  else if (!s3 && !s4 && !s5 &&  s6 && !s7) erro =  0.87;  // Sensor 6     na linha branca
+  if      ( s4 && !s5 && !s6) erro = -0.87;  // Sensor 4     na linha branca
+  else if ( s4 &&  s5 && !s6) erro = -0.44;  // Sensor 4 e 5 na linha branca
+  else if (!s4 &&  s5 && !s6) erro =  0;     // Sensor 5     na linha branca        POSIÇÃO IDEAL
+  else if (!s4 &&  s5 &&  s6) erro =  0.44;  // Sensor 5 e 6 na linha branca
+  else if (!s4 && !s5 &&  s6) erro =  0.87;  // Sensor 6     na linha branca
   else erro = 0;
 }
 
